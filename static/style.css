@@ -1,0 +1,105 @@
+/* #font-family: 'Libre Baskerville',
+serif;
+font-family: 'Quicksand',
+sans-serif; */
+
+body {
+        background-color: whitesmoke;
+        width: 100%;
+        font-family: 'Quicksand', sans-serif;
+}
+header {
+        text-align: center;
+        padding: 20px 50px 20px 50px;
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+        background-color: rgb(136, 193, 135);
+        border-radius: 5px;
+
+}
+header h1{
+        font-weight:400;
+        color: white;
+}
+.add-event {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 50px;
+
+        
+
+}
+.add-event h3{
+        font-weight: 100;
+        font-size: 25px;
+}
+.add-event form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+}
+
+.inputs{
+        align-self:center;
+        margin: 10px;
+        width: 180px;
+        height: 35px;
+        border-radius: 10px;
+        padding: 10px;
+        border: 0.5px solid black;
+
+}
+.add-event form textarea {
+        margin: 10px;
+        border-radius: 10px;
+        border: 0.5px solid black;
+        padding: 10px;
+
+
+}
+.add-event form label {
+        margin: 2px;
+        align-self: center;
+}
+.submit-button{
+        background-color: palevioletred;
+        color: ghostwhite;
+        border: none;
+        border-radius: 5px;
+        width: 90px;
+        height: 40px;
+        margin: 10px;
+        align-self: center;
+
+}
+.events-list{
+        display: flex;
+        list-style: none;
+        flex-flow: row nowrap;
+        justify-content: center;
+        padding: 10px 10px 20px 10px;
+        align-items: center;
+        border-bottom: 0.5px solid gray;
+}
+.date, .time, .capacity, .number, .recurring,.date-heading, .time-heading, .capacity-heading, .number-heading, .recurring-heading {
+    width: 100px;
+    text-align: center;
+
+}
+.event_name{
+        font-weight: 600;
+}
+.event_name,
+.location, .event-heading, .location-heading {
+        width: 200px;
+        text-align: center;
+}
+.description, .description-heading {
+        width: 350px;
+        text-align: center;
+}
+.date-heading, .time-heading, .event-heading, .capacity-heading, .location-heading, .description-heading{
+        font-weight: 500;
+}

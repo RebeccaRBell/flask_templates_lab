@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title>Community Events</title>
+		<link href="/static/style.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header>
+			<h1>Events In Your Local Community</h1>
+		</header>
+		<main>
+			<div class="add-event">
+				<h3>Add A New Event</h3>
+				<form action="/" method="post">
+					<label for="date">Date</label>
+					<input
+						class="inputs"
+						type="date"
+						name="date"
+						placeholder="what date?"
+					/>
+					<label for="time">Time</label>
+					<input class="inputs" type="time" name="time" />
+					<label for="name">Event Name</label>
+					<input
+						class="inputs"
+						type="text"
+						name="name"
+						placeholder="Input event name"
+					/>
+					<label for="capacity">Venue Capacity</label>
+					<input
+						class="inputs"
+						type="number"
+						name="capacity"
+						placeholder="Capacity of venue"
+					/>
+					<label for="location">Location</label>
+					<input
+						class="inputs"
+						type="text"
+						name="location"
+						placeholder="Event Location"
+					/>
+					<label for="description">Description</label>
+					<textarea
+						name="description"
+						rows="2"
+						cols="40"
+						placeholder="Give a brief description of the event"
+					></textarea>
+					<label for="recurring">Weekly Event?</label>
+					<input type="checkbox" name="recurring" />
+					<input
+						class="submit-button"
+						type="submit"
+						name="submit"
+						value="Add Event"
+					/>
+				</form>
+			</div>
+			<div>
+				<ul class="events-list">
+					<li class="date-heading">Date</li>
+					<li class="time-heading">Time</li>
+					<li class="event-heading">Event</li>
+					<li class="capacity-heading">Spots Taken</li>
+					<li class="location-heading">Location</li>
+					<li class="description-heading">Event Description</li>
+					<li class="recurring-heading">Weekly Event?</li>
+				</ul>
+				{% for event in events %}
+				<ul class="events-list">
+					<li class="date">{{ event.date }}</li>
+					<li class="time">{{ event.time }}</li>
+					<li class="event_name">{{ event.event_name }}</li>
+					<li class="number">
+						{{ event.number_of_guests }}/<span>{{ event.capacity }}</span>
+					</li>
+					<li class="location">{{ event.room_location }}</li>
+					<li class="description">{{ event.description }}</li>
+					<li class="recurring">
+						{% if event.recurring == True %} <span> &#9989;</span>
+						{% endif %}
+					</li>
+				</ul>
+			</div>
+		</main>
+	</body>
+	{% endfor %}
+</html>
